@@ -1,9 +1,7 @@
-# install a linux distro
+FROM python:3.12-slim
 
-# copy files and directories
+COPY src .
 
-# set working directory
+RUN pip install --no-cache-dir -r requirements.txt
 
-# run dependencies
-
-# start process
+ENTRYPOINT [ "python", "main.py" ]
