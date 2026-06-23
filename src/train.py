@@ -1,5 +1,4 @@
 import os
-from skimage import imread
 
 # prepare data
 input_dir = os.path.join(os.getcwd(), "images")
