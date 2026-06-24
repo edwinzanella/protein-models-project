@@ -1,8 +1,3 @@
-scikit-learn==1.4.2
-numpy==1.26.4
-scipy==1.13.1
-pandas==2.2.2
-requests==2.32.3
-biopython==1.83
-torch==2.3.1
-torch_geometric==2.5.3
+version https://git-lfs.github.com/spec/v1
+oid sha256:facf858cd97f54763d6a4f1a45b03e12344e386ae875c07bda301d4cc14d1059
+size 130
