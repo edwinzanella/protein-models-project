@@ -3,7 +3,7 @@ import pandas as pd
 
 COL_PDB_ID = 0
 COL_CHAIN = 1
-COL_BINDING_RESIDUES = 4
+COL_BINDING_RESIDUES = 7
 
 class ActiveSiteLabels:
     def __init__(self, biolip_file):
