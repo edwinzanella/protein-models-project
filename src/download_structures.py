@@ -27,8 +27,7 @@ def main():
     
     with open(args.ids_file) as f:
         content = f.read()
-    
-    pdb_ids = [line.strip() for line in content.splitlines() if line.strip()]
+        pdb_ids = sorted(set(line.split(",")[0].strip() for line in content.splitlines() if line.strip()))
         
     print(f"Downloading {len(pdb_ids)} structures...")
     failed = []

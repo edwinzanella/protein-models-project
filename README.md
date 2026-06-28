@@ -6,6 +6,8 @@ Predicts, per residue, whether a protein is part of an active/binding site using
 
 A Docker container is set up creating a docker image of an OS running Python 3.12. The Dockerfile install all of the python dependencies listed in requirements.txt.
 
+There was a deadlock error running the files on MacOS which required me to switch my file shared implementation on Docker from VirtioFS to gRPC FUSE. If you receive a deadlock error, try switching between these two file sharing implementations.
+
 ## Reposity
 
 The repository for this codebase is at https://github.com/edwinzanella/protein-models-project and uses GitHub Large File Storage on .txt files. 
@@ -29,3 +31,10 @@ pdb_ids.txt uses this format per line:
 from columns 0 and 1 of BioLiP.txt which are manually entered into into pdb_ids.txt for training.
 
 So far I have manually added the first 250 entries into pdb_ids.txt
+
+## Running Everything
+
+Download structures:
+./run.sh python src/download_structures.py --ids_file data/pdb_ids.txt --out_dir data/pdb_raw
+
+Build the graph dataset:
