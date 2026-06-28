@@ -26,7 +26,9 @@ def main():
     args = parser.parse_args()
     
     with open(args.ids_file) as f:
-        pdb_ids = [line.strip() for line in f if line.strip()]
+        content = f.read()
+    
+    pdb_ids = [line.strip() for line in content.splitlines() if line.strip()]
         
     print(f"Downloading {len(pdb_ids)} structures...")
     failed = []
