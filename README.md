@@ -32,6 +32,8 @@ from columns 0 and 1 of BioLiP.txt which are manually entered into into pdb_ids.
 
 So far I have manually added the first 250 entries into pdb_ids.txt
 
+There are over 900,000 total entries in the BioLip.txt dataset.
+
 ## Running Everything
 
 Download structures:
