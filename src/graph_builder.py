@@ -2,7 +2,7 @@ import numpy as np
 import torch
 from torch_geometric.data import Data
 from Bio.PDB import MMCIFParser
-from Bio.PDB.Polypeptide import three_to_one
+from Bio.PDB.Polypeptide import three_to_index, index_to_one
 
 AA_LIST = list("ACDEFGHIKLMNPQRSTVWY")
 AA_TO_INDEX = {aa: i for i, aa in enumerate(AA_LIST)}
@@ -10,11 +10,11 @@ AA_TO_INDEX = {aa: i for i, aa in enumerate(AA_LIST)}
 def _aa_one_hot(resname):
     one_hot = np.zeros(len(AA_LIST), dtype=np.float32)
     try:
-        one_letter = three_to_one(resname)
+        one_letter = index_to_one(three_to_index(resname))
         idx = AA_TO_INDEX.get(one_letter)
         if idx is not None:
             one_hot[idx] = 1.0
-    except KeyError:
+    except (KeyError, IndexError):
         pass
     return one_hot
 

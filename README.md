@@ -38,3 +38,11 @@ Download structures:
 ./run.sh python src/download_structures.py --ids_file data/pdb_ids.txt --out_dir data/pdb_raw
 
 Build the graph dataset:
+./run.sh python src/build_dataset.py \
+    --ids_file data/pdb_ids.txt \
+    --pdb_dir data/pdb_raw \
+    --biolip_file data/BioLiP.txt \
+    --out_file data/dataset.pt
+
+Train:
+./run.sh python src/train.py --dataset_file data/dataset.pt --epochs 50
